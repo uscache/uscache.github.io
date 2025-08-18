@@ -1,0 +1,51 @@
+# lsi: false
+# safe: true
+# source: [your repo's top level directory]
+# incremental: false
+# highlighter: rouge
+# gist:
+#   noscript: false
+# kramdown:
+#   math_engine: mathjax
+#   syntax_highlighter: rouge
+
+# Site
+name: "嶽洋留記"
+description: "一個歷史遊戲迷的回憶錄"
+logo: "assets/images/logo.png"
+favicon: 'assets/images/logo.png'
+google_analytics: 'G-6VFCZMQV40'
+disqus: 'uscache'
+comments: true
+# url: "https://uscache.github.io/blog"
+# baseurl: "/"
+
+# not specifying `url`: entries in sitemap becomes ~//ARTICLE
+# `url: https://uscache.github.io/blog`: ~/blog/blog
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-remote-theme
+
+
+# Pagination
+paginate: 6
+paginate_path: "/page:num"
+
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+
+
+# Misc.
+remote_theme: uscache/mediumish-theme-jekyll
