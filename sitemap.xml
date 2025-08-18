@@ -1,0 +1,17 @@
+---
+layout: nil
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% assign pages = site.pages | where_exp: "page", "page.sitemap != false" %}
+  {% assign posts = site.posts | where_exp: "post", "post.sitemap != false" %}
+  {% assign base_url = site.url | append: site.baseurl %}
+
+  {% for post in posts %}
+  <url>
+    <loc>{{ base_url }}{{ post.url | uri_escape }}</loc>
+    <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>
