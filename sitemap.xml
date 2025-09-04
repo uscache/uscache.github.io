@@ -10,7 +10,7 @@ permalink: /sitemap.xml
 
   {% for post in posts %}
   <url>
-    <loc>{{ base_url }}{{ post.url | uri_escape }}</loc>
+    <loc>{{ base_url }}{{ post.url | uri_escape }}.html</loc>
     <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
   </url>
   {% endfor %}
